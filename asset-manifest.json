@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/animation/static/css/main.04196f2b.css",
+    "main.js": "/animation/static/js/main.c47ef832.js",
+    "index.html": "/animation/index.html",
+    "main.04196f2b.css.map": "/animation/static/css/main.04196f2b.css.map",
+    "main.c47ef832.js.map": "/animation/static/js/main.c47ef832.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04196f2b.css",
+    "static/js/main.c47ef832.js"
+  ]
+}
