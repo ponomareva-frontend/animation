@@ -8,11 +8,10 @@ const ElementsList = () => {
     const dispatch = useDispatch();
 
     const itemVariants = {
-        hidden: { opacity: 0, x: '-100%' },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
         exit: { opacity: 0, x: '100%' },
     };
-
 
     return (
         <div className="container py-10 h-full flex flex-col items-center w-full min-w-full">
@@ -28,12 +27,13 @@ const ElementsList = () => {
                     Remove
                 </button>
             </div>
-            <motion.ul className="grid grid-cols-5 w-full" layout='size'>
-                <AnimatePresence>
-                    {elements.map((element, index) => (
+            <div className='w-full overflow-x-auto h-[20vw]'>
+            <motion.ul className="flex min-w-0 h-full overflow-x-auto" layout>
+                <AnimatePresence initial>
+                    {elements.map((element) => (
                         <motion.li
-                            key={index}
-                            className="relative w-full pt-[100%]"
+                            key={element.id}
+                            className="relative min-w-[20vw] h-full"
                             layout
                             style={{
                                 backgroundColor: element.color,
@@ -42,11 +42,13 @@ const ElementsList = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0.3 }}
                         />
                     ))}
                 </AnimatePresence>
             </motion.ul>
+            </div>
+            
         </div>
     );
 };

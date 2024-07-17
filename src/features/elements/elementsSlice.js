@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import {v4} from 'uuid';
+
 
 const getRandomColor = () => {
   const letters = '0123456789ABCDEF';
@@ -18,7 +20,7 @@ const elementsSlice = createSlice({
   initialState,
   reducers: {
     addElement: (state) => {
-      state.elements.unshift({ color: getRandomColor() });
+      state.elements.unshift({ color: getRandomColor(), id: v4() });
     },
     removeElement: (state) => {
       state.elements.pop();
